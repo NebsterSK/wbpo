@@ -1,12 +1,14 @@
 {
-    "name": "laravel/laravel",
+    "name": "nebstersk/wbpo",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "Test application.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
         "ext-curl": "*",
+        "ext-mysql": "*",
+        "ext-redis": "*",
         "ext-xml": "*",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",

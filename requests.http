@@ -1,0 +1,14 @@
+### Index
+GET {{host}}/api/v1/payments
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Store
+POST {{host}}/api/v1/payments
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "test": "test"
+}
