@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -10,7 +11,7 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
-    public function run(): void
+    public function run() : void
     {
         $user = User::factory()->create();
 
@@ -20,5 +21,7 @@ class DatabaseSeeder extends Seeder
             'abilities' => ['api'],
             'expires_at' => now()->addDays(30),
         ]);
+
+        Payment::factory()->count(3)->create();
     }
 }

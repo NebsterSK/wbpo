@@ -10,5 +10,10 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "test": "test"
+  "payer_name": "test test",
+  "payer_email": "test@test.com",
+  "payer_address": "test",
+  "amount": 123.45,
+  "currency": "eur",
+  "provider": "test"
 }

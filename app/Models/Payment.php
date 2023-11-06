@@ -54,7 +54,7 @@ class Payment extends Model
                 return $value / 100;
             },
             set: function (float $value): int {
-                return (int) $value * 100;
+                return (int) ($value * 100);
             }
         );
     }

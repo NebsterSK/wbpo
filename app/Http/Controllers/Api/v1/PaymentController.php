@@ -3,17 +3,27 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PaymentStoreRequest;
+use App\Http\Resources\PaymentResource;
+use App\Models\Payment;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class PaymentController extends Controller
 {
-    public function index()
+    public function index() : AnonymousResourceCollection
     {
-        return response()->json(1);
+        $payments = Payment::get();
+
+        return PaymentResource::collection($payments);
     }
 
-    public function store()
+    public function store(PaymentStoreRequest $request) : PaymentResource
     {
-        return response()->json(1);
+        $validated = $request->validated();
+
+        $payment = Payment::create($validated);
+
+        return new PaymentResource($payment);
     }
 }
