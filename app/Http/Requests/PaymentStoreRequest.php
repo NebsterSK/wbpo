@@ -8,6 +8,15 @@ use Illuminate\Validation\Rule;
 
 class PaymentStoreRequest extends FormRequest
 {
+    public function authorize(): bool
+    {
+        if ($this->hasValidSignature()) {
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *

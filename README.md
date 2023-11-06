@@ -13,4 +13,10 @@
 
 ## Usage
 
-Example API requests are prepared in `requests.http`. They can be run directly in PHPStorm or replicated in Postman.
+Example API requests are prepared in `requests.http` file.
+They can be run directly in PHPStorm or replicated in Postman.
+User and API token were generated in seeder.
+
+1. Get signed URL of `payments.store` endpoint by calling `Signature` GET request
+2. Send `Store` POST request with given signature
+3. Check DB for stored payment

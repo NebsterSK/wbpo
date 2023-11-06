@@ -21,7 +21,7 @@ class PaymentFactory extends Factory
             'payer_name' => $this->faker->name(),
             'payer_email' => $this->faker->email(),
             'payer_address' => $this->faker->address(),
-            'amount' => $this->faker->numberBetween(1, 1234), // 0,01 - 12,34
+            'amount' => $this->faker->numberBetween(1, 12345),
             'currency' => $this->faker->randomElement(Currency::toArray()),
             'provider' => 'test',
         ];

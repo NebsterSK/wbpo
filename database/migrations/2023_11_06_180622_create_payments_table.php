@@ -14,9 +14,9 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('payer_name')->nullable(false);
-            $table->string('payer_email')->nullable(false);
-            $table->string('payer_address')->nullable(false);
+            $table->text('payer_name')->nullable(false);
+            $table->text('payer_email')->nullable(false);
+            $table->text('payer_address')->nullable(false);
             $table->unsignedInteger('amount')->nullable(false);
             $table->enum('currency', Currency::toArray())->nullable(false)->default(Currency::EUR->value);
             $table->string('provider')->nullable(false);

@@ -39,7 +39,6 @@ class Payment extends Model
 {
     use HasFactory;
 
-    // TODO: Encrypt payer columns
     protected $fillable = [
         'payer_name',
         'payer_email',
@@ -47,6 +46,12 @@ class Payment extends Model
         'amount',
         'currency',
         'provider',
+    ];
+
+    protected $casts = [
+        'payer_name' => 'encrypted',
+        'payer_email' => 'encrypted',
+        'payer_address' => 'encrypted',
     ];
 
     public function amount(): Attribute

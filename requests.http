@@ -3,8 +3,13 @@ GET {{host}}/api/v1/payments
 Authorization: Bearer {{token}}
 Accept: application/json
 
+### Signature
+GET {{host}}/api/v1/payments/store-url
+Authorization: Bearer {{token}}
+Accept: application/json
+
 ### Store
-POST {{host}}/api/v1/payments
+POST {{host}}/api/v1/payments[SIGNATURE]
 Authorization: Bearer {{token}}
 Accept: application/json
 Content-Type: application/json
