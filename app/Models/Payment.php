@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $provider
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
+ *
  * @method static \Database\Factories\PaymentFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Payment newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Payment newQuery()
@@ -31,6 +32,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Payment wherePayerName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Payment whereProvider($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Payment whereUpdatedAt($value)
+ *
  * @mixin \Eloquent
  */
 class Payment extends Model
@@ -47,7 +49,7 @@ class Payment extends Model
         'provider',
     ];
 
-    public function amount() : Attribute
+    public function amount(): Attribute
     {
         return Attribute::make(
             get: function (int $value): float {

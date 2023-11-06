@@ -2,12 +2,12 @@
 
 namespace App\Enums;
 
-enum Currency : string
+enum Currency: string
 {
     case EUR = 'eur';
     case USD = 'usd';
 
-    public static function toArray() : array
+    public static function toArray(): array
     {
         $array = [];
 
