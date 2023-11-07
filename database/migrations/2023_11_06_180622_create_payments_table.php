@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->nullable(false)->autoIncrement()->unique()->primary();
             $table->text('payer_name')->nullable(false);
             $table->text('payer_email')->nullable(false);
             $table->text('payer_address')->nullable(false);

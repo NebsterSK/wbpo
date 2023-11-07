@@ -19,7 +19,7 @@ class PaymentController extends Controller
         return PaymentResource::collection($payments);
     }
 
-    public function storeEndpointUrl() : JsonResponse
+    public function storeEndpointUrl(): JsonResponse
     {
         return response()->json([
             'url' => URL::temporarySignedRoute('api.v1.payments.store', now()->addMinutes(30), ['user' => 1]),
@@ -34,6 +34,4 @@ class PaymentController extends Controller
 
         return new PaymentResource($payment);
     }
-
-
 }
