@@ -24,7 +24,7 @@ class EventServiceProvider extends ServiceProvider
     /**
      * The model observers for your application.
      *
-     * @var array
+     * @var array<string, array<int, object|string>|object|string>
      */
     protected $observers = [
         Payment::class => [PaymentObserver::class],

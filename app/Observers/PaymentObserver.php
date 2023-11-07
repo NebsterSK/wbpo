@@ -19,7 +19,6 @@ class PaymentObserver
     {
         // TODO: Dispatch payment processing job
 
-
         // TODO: Notify correct user. Obviously.
         Auth::user()->notify(new PaymentCreatedNotification($payment));
 
@@ -59,7 +58,6 @@ class PaymentObserver
                     'currency' => $payment->currency,
                     'provider' => $payment->provider,
                 ]);
-
 
                 break;
         }

@@ -45,7 +45,7 @@ class PaymentController extends Controller
 
             return response()->json([
                 'message' => 'Payment could not be created.',
-                'details' => 'A bunch of highly skilled gnomes were dispatched to fix the problem. Please try agfain later.',
+                'details' => 'A bunch of highly skilled gnomes were dispatched to fix the problem. Please try again later.',
             ], Response::HTTP_BAD_REQUEST);
         }
 

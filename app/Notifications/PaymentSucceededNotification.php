@@ -36,9 +36,9 @@ class PaymentSucceededNotification extends Notification implements ShouldQueue
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->line('Your payment for ' . $this->payment->currency . ' ' . $this->payment->amount . ' processed successfully!')
-                    ->action('Yay!', url('/'))
-                    ->line('Thank you for using our application!');
+            ->line('Your payment for '.$this->payment->currency.' '.$this->payment->amount.' processed successfully!')
+            ->action('Yay!', url('/'))
+            ->line('Thank you for using our application!');
     }
 
     /**
