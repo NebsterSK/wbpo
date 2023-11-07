@@ -8,6 +8,7 @@ use App\Http\Resources\PaymentResource;
 use App\Models\Payment;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
 
 class PaymentController extends Controller
@@ -19,10 +20,10 @@ class PaymentController extends Controller
         return PaymentResource::collection($payments);
     }
 
-    public function storeEndpointUrl(): JsonResponse
+    public function signature(): JsonResponse
     {
         return response()->json([
-            'url' => URL::temporarySignedRoute('api.v1.payments.store', now()->addMinutes(30), ['user' => 1]),
+            'url' => URL::temporarySignedRoute('api.v1.payments.store', now()->addMinutes(config('custom.signedUrlsLifetime')), ['user' => Auth::user()->id]),
         ]);
     }
 

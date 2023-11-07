@@ -10,10 +10,10 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Models\Payment
  *
- * @property int $id
- * @property string $payer_name
- * @property string $payer_email
- * @property string $payer_address
+ * @property string $id
+ * @property mixed $payer_name
+ * @property mixed $payer_email
+ * @property mixed $payer_address
  * @property float $amount
  * @property string $currency
  * @property string $provider

@@ -19,4 +19,4 @@ User and API token were generated in seeder.
 
 1. Get signed URL of `payments.store` endpoint by calling `Signature` GET request
 2. Send `Store` POST request with given signature
-3. Check DB for stored payment
+3. Check DB for stored Payment
