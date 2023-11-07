@@ -9,7 +9,10 @@ use App\Models\Payment;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
+use Symfony\Component\HttpFoundation\Response;
+use Throwable;
 
 class PaymentController extends Controller
 {
@@ -27,11 +30,24 @@ class PaymentController extends Controller
         ]);
     }
 
-    public function store(PaymentStoreRequest $request): PaymentResource
+    public function store(PaymentStoreRequest $request): PaymentResource|JsonResponse
     {
         $validated = $request->validated();
 
-        $payment = Payment::create($validated);
+        try {
+            $payment = Payment::create($validated);
+        } catch (Throwable $throwable) {
+            Log::error('Payment not created', [
+                'exception_message' => $throwable->getMessage(),
+                'exception_file' => $throwable->getFile(),
+                'exception_line' => $throwable->getLine(),
+            ]);
+
+            return response()->json([
+                'message' => 'Payment could not be created.',
+                'details' => 'A bunch of highly skilled gnomes were dispatched to fix the problem. Please try agfain later.',
+            ], Response::HTTP_BAD_REQUEST);
+        }
 
         return new PaymentResource($payment);
     }

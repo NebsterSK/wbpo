@@ -14,12 +14,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed $payer_name
  * @property mixed $payer_email
  * @property mixed $payer_address
+ * @property string $status
  * @property float $amount
  * @property string $currency
  * @property string $provider
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
- *
  * @method static \Database\Factories\PaymentFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Payment newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Payment newQuery()
@@ -32,8 +32,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Payment wherePayerEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Payment wherePayerName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Payment whereProvider($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Payment whereUpdatedAt($value)
- *
  * @mixin \Eloquent
  */
 class Payment extends Model

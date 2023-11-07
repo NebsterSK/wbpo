@@ -22,6 +22,6 @@ class DatabaseSeeder extends Seeder
             'expires_at' => now()->addDays(30),
         ]);
 
-//        Payment::factory()->create();
+        //        Payment::factory()->create();
     }
 }
